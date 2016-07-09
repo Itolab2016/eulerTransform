@@ -43,8 +43,13 @@ short eulerTr(double* x, double* y, double* z, double phi, double theta, double 
 
 short eulerinvTr(double* x, double* y, double* z, double phi, double theta, double psi)
 {
+
+ double X, Y, Z;
+ 
  X=cos(theta)*cos(psi)*(*x)                   + (sin(phi)*sin(theta)*cos(psi) - cos(phi)*sin(psi))*(*y) - (cos(phi)*sin(theta)*cos(psi) + sin(phi)*sin(psi))*(*z);
- Y=(cos(theta)*sin(psi)*(*x)                  + (sin(phi)*sin(theta)*sin(psi) + cos(phi)*cos(psi))*(*y) + (cos(phi)*sin(theta)*sin(psi)-sin(phi)*cos(psi))*(*z);
+
+
+ Y=cos(theta)*sin(psi)*(*x)                  + (sin(phi)*sin(theta)*sin(psi) + cos(phi)*cos(psi))*(*y) + (cos(phi)*sin(theta)*sin(psi)-sin(phi)*cos(psi))*(*z);
  Z=sin(theta)*(*x)                            + sin(phi)*cos(theta)*(*y)                                + cos(phi)*cos(theta)*(*z);
  *x=X;
  *y=Y;
