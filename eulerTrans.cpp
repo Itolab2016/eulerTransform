@@ -9,7 +9,7 @@ short eulerinvTr(double* x, double* y, double* z, double phi, double theta, doub
 
 int main()
 {
- double x,y,x;
+ double x,y,z;
  double phi, theta, psi;
  
  x=1.0;
@@ -21,10 +21,10 @@ int main()
  psi   = 15.0 * M_PI/180.0;
  
  eulerTr(&x, &y, &z, phi, theta, psi);//&を変数の前につけると変数のアドレスを渡すことができる
- printf("(%f,%f,%f)",x,y,z);//変換結果表示
+ printf("(%f,%f,%f)\n",x,y,z);//変換結果表示
  
  eulerinvTr(&x, &y, &z,phi, theta, psi);
- printf("(%f,%f,%f)",x,y,z);
+ printf("(%f,%f,%f)\n",x,y,z);
  
 }
 
