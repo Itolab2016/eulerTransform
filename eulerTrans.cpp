@@ -15,6 +15,10 @@ int main()
  y=2.0;
  z=3.0;
  
+ phi = 60.0*MATH_PI/180.0;
+ theta = 20.0*MATH_PI/180.0;
+ psi = 15.0*MATH_PI/180.0;
+ 
  eulerTr(x, y, z, phi, theta, psi);
  printf("%f,%f,%f",x,y,z);
  
