@@ -29,7 +29,6 @@ int main()
     x = 2.0*k*(rand()/(RAND_MAX+1.0)-0.5);
     y = 2.0*k*(rand()/(RAND_MAX+1.0)-0.5);
     z = 2.0*k*(rand()/(RAND_MAX+1.0)-0.5);
-    printf("%f %f %f ",x,y,z);
     eulerTr(&x, &y, &z, phi, theta, psi);
     printf("%f %f %f\n",x,y,z);
   }
