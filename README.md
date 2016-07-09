@@ -3,7 +3,7 @@
 
 コンパイルは以下のようにします。
 
-g++ eulerTrns.cpp
+g++ eulerTrans.cpp
 
 実行は
 
