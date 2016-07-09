@@ -2,9 +2,10 @@
 #include <stdio.h>
 #include <math.h>
 
-short eulerTr(double* x, double* y, double* z, double phi, double theta, double psi);
-short eulerinvTr(double* x, double* y, double* z, double phi, double theta, double psi);
-
+//以下の関数は変換したい座標をポインタ（変数のアドレス）で渡します。
+//変換した結果は渡した変数を上書きした形で返されます。
+short eulerTr(double* x, double* y, double* z, double phi, double theta, double psi);//回転の座標変換関数の宣言
+short eulerinvTr(double* x, double* y, double* z, double phi, double theta, double psi);//逆回転の座標変換関数の宣言
 
 int main()
 {
@@ -15,15 +16,15 @@ int main()
  y=2.0;
  z=3.0;
  
- phi   = 60.0 * M_PI/180.0;
+ phi   = 60.0 * M_PI/180.0;//sin()等は扱う単位がラジアンなので、解りやすい度からラジアンに変換
  theta = 20.0 * M_PI/180.0;
  psi   = 15.0 * M_PI/180.0;
  
- eulerTr(&x, &y, &z, phi, theta, psi);
- printf("%f,%f,%f",x,y,z);
+ eulerTr(&x, &y, &z, phi, theta, psi);//&を変数の前につけると変数のアドレスを渡すことができる
+ printf("(%f,%f,%f)",x,y,z);//変換結果表示
  
  eulerinvTr(&x, &y, &z,phi, theta, psi);
- printf("%f,%f,%f",x,y,z);
+ printf("(%f,%f,%f)",x,y,z);
  
 }
 
@@ -37,6 +38,7 @@ short eulerTr(double* x, double* y, double* z, double phi, double theta, double 
  *x=X;
  *y=Y;
  *z=Z;
+ return 0;
 }
 
 short eulerinvTr(double* x, double* y, double* z, double phi, double theta, double psi)
@@ -44,4 +46,5 @@ short eulerinvTr(double* x, double* y, double* z, double phi, double theta, doub
  *x=0.0;
  *y=0.0;
  *z=0.0;
+ return 0;
 }
